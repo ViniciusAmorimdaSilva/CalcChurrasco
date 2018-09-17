@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculo de Churrasco</title>
+    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body background="churrasco.jpg" class="container">
+
+    <div class="row-fluid">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4" style="margin-top: 40px; border: 1px #000 solid; border-radius: 5px; padding:30px; background-color: #f7f7f7">
+      <div class="row-fluid">
+        <div class="col-md-12 text-center">
+          <h1>Calculadora de Churrasco</h1>
+        </div>
+      </div>
+          <div class="row-fluid">
+            <div class="col-md-12">
+              <div class="form-group" style="margin-top: 30px !important;">
+                <label for="campAdultos">Adultos</label>
+                <input type="text" class="form-control" id="campAdultos" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="campCriancas">Crianças</label>
+                <input type="text" class="form-control" id="campCriancas" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="campCriancas">Consumidores de Álcool</label>
+                <input type="text" class="form-control" id="campAlcool" placeholder="">
+              </div>
+
+              <div class="row">
+              	<label>Adicionais</label>
+              	<form>
+  					<input type="checkbox" name="farofa" value="farofa"> Farofa<br>
+  					<input type="checkbox" name="carvao" value="carvao"> Carvão 5kg<br>
+  					<input type="checkbox" name="paes" value="paes"> Pães<br>
+				</form>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-success" id="calcularChurras" style="width: 100%; margin-top: 20px;"> Calcular </button>
+            </div>
+          </div>
+
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    	//console.log(qtdAdultos);
+    	//document.getElementById("resultado").value = qtdAdultos;
+
+    	//implementar os checkbox
+    	//Número de consumidores de alcool não podem ser maior que o número total de pessoas
+
+    	$("#calcularChurras").click(function(){
+    		var qtdAdultos = $("#campAdultos").val();
+    		var qtsCriancas = $("#campCriancas").val();
+    		var qtsBebem = $("#campAlcool").val();
+
+			//document.write(qtdAdultos);
+
+			var valor = (qtdAdultos*12) + (qtsCriancas*7) + (qtsBebem * 25);
+    		alert("O valor do churrasco é: " + valor);
+
+    	});
+      
+        
+    </script>
+  </body>
+</html>
